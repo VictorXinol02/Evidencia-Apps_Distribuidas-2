@@ -1,0 +1,45 @@
+body{
+    margin: 0;
+    overflow: hidden;
+}
+
+
+nav{
+    background-color: #cfbebe;
+height: 3rem;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+margin-top: 0%;
+}
+
+nav > a{
+    color: #fff;
+    text-decoration: none;
+    transition: color 1s;
+}
+
+nav > a:hover{
+    color: #f00;
+}
+
+
+
+
+
+
+
+
+
+
+table{
+    width: 60%;
+    margin: auto;
+    margin-top:10%;
+    border:1px solid black;
+}
+
+td{
+    border: 1px solid black;
+    padding: 10px;
+}

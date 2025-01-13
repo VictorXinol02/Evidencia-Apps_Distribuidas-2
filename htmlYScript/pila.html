@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    
+</head>
+
+<body>
+    <h1>Pila de números</h1>
+    <p>Ingresa un número del 0 al 9 y presiona agregar para almacenarlo en la pila y eliminar para quitarlo de la pila.
+    </p>
+    <input type="text" id="numero" maxlength="1">
+    <button onclick="agregar()">Agregar</button>
+    <button onclick="eliminar()">Eliminar</button>
+    <div id="pila" style="margin-top:20px"></div>
+</body>
+
+<script>
+    // pila.js
+
+    // Crear una pila vacía
+    var pila = [];
+
+    // Crear una función para agregar números a la pila
+    function agregar() {
+        // Obtener el número ingresado por el usuario
+        var numero = document.getElementById("numero").value;
+        // Verificar que el número sea válido y que la pila no esté llena
+        if (numero >= 0 && numero <= 9 && pila.length < 7) {
+            // Verificar que el número no se repita en la pila
+            if (pila.indexOf(numero) == -1) {
+                // Agregar el número al final de la pila
+                pila.push(numero);
+                // Mostrar la pila en la página
+                mostrar();
+                // Limpiar el campo de entrada
+                document.getElementById("numero").value = "";
+            } else {
+                // Mostrar un mensaje de error si el número se repite
+                alert("El número ya está en la pila.");
+            }
+        } else {
+            // Mostrar un mensaje de error si el número es inválido o la pila está llena
+            alert("El número debe ser entre 0 y 9 y la pila debe tener menos de 7 elementos.");
+        }
+    }
+
+    // Crear una función para eliminar números de la pila
+    function eliminar() {
+        // Verificar que la pila no esté vacía
+        if (pila.length > 0) {
+            // Eliminar el último elemento de la pila
+            var numero = pila.pop();
+            // Mostrar la pila en la página
+            mostrar();
+            // Mostrar un mensaje con el número eliminado
+            alert("Se eliminó el número " + numero + " de la pila.");
+        } else {
+            // Mostrar un mensaje de error si la pila está vacía
+            alert("La pila está vacía.");
+        }
+    }
+
+    // Crear una función para mostrar la pila en la página
+    function mostrar() {
+        //Obtenerel elemento donde se va a mostrara pila
+        var div = document.getElementById ("pila");
+        //Limpiarel contenido delelemento
+        div.innerHTML = "";
+        //Recorrer los elementos dela piladesde abajo hacia arriba
+        for (var i = 0; i < pila.length; i++) {
+            //Crearun elemento span paracada elemento
+            var span = document.createElement("span");
+            //Agregarleun estilo para quese vea como una caja
+            span.style.display = "block";
+            span.style.border = "1px solid black";
+            span.style.width = "50px";
+            span.style.height = "50px";
+            span.style.textAlign = "center";
+            span.style.verticalAlign = "middle";
+            span.style.lineHeight = "50px";
+            //Agregarleun color aleatorio al fondo delelemento usando Math.random()
+            var r = Math.floor(Math.random() * 256); //Generarun númerodel0al255para rojo 
+            var g = Math.floor(Math.random() * 256); //Generarun númerodel0al255para verde 
+            var b = Math.floor(Math.random() * 256); //Generarun númerodel0al255para azul 
+            var color = 'rgb(' + r + ',' + g + ',' + b + ')'; //Crearunacadenaconel formato rgb(r, g, b)
+            span.style.backgroundColor = color; //Asignarel color al fondo delelement
+            span.innerText = pila[i]; //Agregarleel texto conel valor delelemento 
+            //Agregarlealelemento donde semuestra lapila
+            div.appendChild(span);
+        } 
+    }
+</script>
+</html>

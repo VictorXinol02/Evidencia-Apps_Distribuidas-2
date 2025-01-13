@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="300" height="400"></canvas>
+<script>
+// Obtener el contexto del canvas
+var ctx = document.getElementById("canvas").getContext("2d");
+
+// Dibujar el fondo
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, 300, 400);
+
+// Dibujar el pelo
+ctx.fillStyle = "#0066cc";
+ctx.beginPath();
+ctx.moveTo(150, 50);
+ctx.bezierCurveTo(100, 70, 80, 120, 90, 170);
+ctx.lineTo(210, 170);
+ctx.bezierCurveTo(220, 120, 200, 70, 150, 50);
+ctx.closePath();
+ctx.fill();
+
+// Dibujar la cara
+ctx.fillStyle = "#ffe0cc";
+ctx.beginPath();
+ctx.arc(150, 170, 60, Math.PI * (5 / 6), Math.PI * (7 /6));
+ctx.lineTo(210 ,170);
+ctx.arc(150 ,170 ,60 ,Math.PI * (11 /6) ,Math.PI * (1 /6));
+ctx.closePath();
+ctx.fill();
+
+// Dibujar los ojos
+ctx.fillStyle = "black";
+ctx.beginPath();
+ctx.arc(130 ,160 ,3 ,0 ,Math.PI *2);
+ctx.fill();
+ 
+ ctx.beginPath();
+ ctx.arc(170 ,160 ,3 ,0 ,Math.PI *2);
+ ctx.fill();
+
+// Dibujar la boca
+ ctx.beginPath();
+ ctx.moveTo(140 ,190);
+ ctx.lineTo(160 ,190);
+ ctx.stroke();
+
+// Dibujar el cuello
+ ctx.fillStyle = "#ffe0cc";
+ ctx.fillRect(140 ,200 ,20 ,20);
+
+// Dibujar el uniforme escolar
+ ctx.fillStyle = "white";
+ ctx.fillRect(100 ,220 ,100 ,80);
+
+ // Dibujar la corbata
+ ctx.fillStyle = "blue";
+ ctx.beginPath();
+ ctx.moveTo(145 ,220);
+ ctx.lineTo(155 ,220);
+ ctx.lineTo(150 ,240);
+ ctx.closePath();
+ ctx.fill();
+
+ // Dibujar las mangas
+ ctx.fillStyle = "blue";
+ ctx.fillRect(80 ,240 ,20 ,40);
+ 
+   //Dibuja las mangas derechas
+
+   //Dibuja las mangas izquierdas
+
+   //Dibuja las mangas derechas
+
+   //Dibuja las mangas izquierdas
+
+   //Dibuja las mangas derechas
+
+   //Dibuja las mangas izquierdas
+
+   //Dibuja las mangas derechas
+
+   //Dibuja las mangas izquierdas
+
+   //Dibuja las mangas derechas
+
+   //Dibuja las mangas izquierdas
+
+
+</script>
+</body>
+</html>
